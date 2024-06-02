@@ -1,0 +1,18 @@
+const int pirPin = 2; // PIR sensor input pin
+const int buzzerPin = 9; // Buzzer output pin
+
+void setup() {
+  pinMode(pirPin, INPUT);
+  pinMode(buzzerPin, OUTPUT);
+}
+
+void loop() {
+  int pirState = digitalRead(pirPin);
+  
+  if (pirState == HIGH) {
+    digitalWrite(buzzerPin, HIGH);
+    delay(1000); // Sound the buzzer for 1 second
+  } else {
+    digitalWrite(buzzerPin, LOW);
+  }
+}
